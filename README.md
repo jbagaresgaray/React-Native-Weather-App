@@ -19,9 +19,9 @@ If you are looking for the [Ionic React](), the repo with the full code can be f
 
 # Ionic Framework
 
-If you are looking for the [Ionic 5](https://github.com/jbagaresgaray/React-Native-Weather-App), the repo with the full code can be found here:
+If you are looking for the [Ionic Framework v5](https://github.com/jbagaresgaray/Ionic-Weather-App), the repo with the full code can be found here:
 
-![React Native](https://miro.medium.com/max/4000/1*mm8JucFufPWr2ls_I1h_0w.png)
+![Ionic Framework](https://hackernoon.com/hn-images/1*nlhD6_U277a1s_VxSbH11g.jpeg)
 
 # Flutter
 
