@@ -30,6 +30,7 @@ export default StyleSheet.create({
   noHeaderBorder: {
     borderBottomWidth: 0,
     marginBottom: 5,
+    backgroundColor: 'transparent',
   },
   noFooterBorder: {
     borderTopWidth: 0,
@@ -44,7 +45,6 @@ export default StyleSheet.create({
   },
   appBackButton: {
     color: Colors.colorWhite,
-    fontSize: 20,
   },
   appHeader: {
     marginLeft: 15,

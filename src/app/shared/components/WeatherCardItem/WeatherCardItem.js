@@ -1,7 +1,16 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, ImageBackground, Text} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  ImageBackground,
+  Text,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import toLower from 'lodash-es/toLower';
+
+import {FONT_REGULAR, FONT_SEMI_BOLD} from '../../../../styles/Typography';
+import Colors from '../../../../styles/Colors';
 
 import IconSun from '../../../../assets/Icon-Sun.svg';
 import IconRain from '../../../../assets/Icon-Rain.svg';
@@ -12,8 +21,6 @@ import IconSunrise from '../../../../assets/Icon-Sunrise.svg';
 import IconSunset from '../../../../assets/Icon-Sunset.svg';
 import IconOvercast from '../../../../assets/Icon-Overcast2.svg';
 import IconClear from '../../../../assets/Icon-Sun.svg';
-import {FONT_REGULAR, FONT_SEMI_BOLD} from '../../../../styles/Typography';
-import Colors from '../../../../styles/Colors';
 
 export default class WeatherCardItem extends Component {
   generateWeatherIcon(weatherDescription) {
@@ -42,30 +49,32 @@ export default class WeatherCardItem extends Component {
 
   render() {
     return (
-      <View style={styles.cardViewContainer}>
-        <LinearGradient
-          colors={['#00000000', '#00000080']}
-          start={{x: 0, y: 0}}
-          end={{x: 0, y: 1}}
-          style={styles.linearGradient}
-        />
-        <ImageBackground source={this.props.image} style={styles.image}>
-          <View style={styles.weatherCardContent}>
-            <View style={styles.weatherCardStatusView}>
-              {this.generateWeatherIcon('sunny')}
-              <Text style={styles.weatherCardStatus}> Sunny</Text>
+      <TouchableWithoutFeedback onPress={this.props.onPress}>
+        <View style={styles.cardViewContainer}>
+          <LinearGradient
+            colors={['#00000000', '#00000080']}
+            start={{x: 0, y: 0}}
+            end={{x: 0, y: 1}}
+            style={styles.linearGradient}
+          />
+          <ImageBackground source={this.props.image} style={styles.image}>
+            <View style={styles.weatherCardContent}>
+              <View style={styles.weatherCardStatusView}>
+                {this.generateWeatherIcon('sunny')}
+                <Text style={styles.weatherCardStatus}> Sunny</Text>
+              </View>
+              <View style={styles.weatherCardTemperatureView}>
+                <Text style={styles.weatherCardTemperature}>37 &deg;</Text>
+              </View>
+              <View style={styles.weatherCardLocationView}>
+                <Text style={styles.weatherCardStatus}>
+                  {this.props.item.title}
+                </Text>
+              </View>
             </View>
-            <View style={styles.weatherCardTemperatureView}>
-              <Text style={styles.weatherCardTemperature}>37 &deg;</Text>
-            </View>
-            <View style={styles.weatherCardLocationView}>
-              <Text style={styles.weatherCardStatus}>
-                {this.props.item.title}
-              </Text>
-            </View>
-          </View>
-        </ImageBackground>
-      </View>
+          </ImageBackground>
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }

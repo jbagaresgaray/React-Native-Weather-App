@@ -2,16 +2,13 @@ import React, {Component} from 'react';
 import {
   Container,
   Header,
-  Title,
   Content,
-  Footer,
-  FooterTab,
   Button,
   Left,
-  Right,
-  Body,
   Icon,
   Text,
+  Item,
+  Input,
 } from 'native-base';
 
 export default class SearchModalScreen extends Component {
@@ -22,16 +19,16 @@ export default class SearchModalScreen extends Component {
   render() {
     return (
       <Container>
-        <Header>
-          <Left>
+        <Header searchBar rounded>
+          <Left style={{flex: null}}>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
               <Icon name="arrow-back" type="Ionicons" />
             </Button>
           </Left>
-          <Body>
-            <Title>Search</Title>
-          </Body>
-          <Right />
+          <Item>
+            <Icon name="ios-search" />
+            <Input placeholder="Search" />
+          </Item>
         </Header>
         <Content>
           <Text>This is Content Section</Text>

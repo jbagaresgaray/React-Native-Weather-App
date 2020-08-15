@@ -11,10 +11,13 @@ import {
   Icon,
   Text,
   List,
+  View,
 } from 'native-base';
+import async from 'async';
 import WeatherCardItem from '../../shared/components/WeatherCardItem/WeatherCardItem';
-import {FlatList} from 'react-native';
 import {PLACES} from '../../shared/constants/data';
+import {getPhotoByCityName} from '../../shared/services/Unsplash';
+import {StyleSheet} from 'react-native';
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -22,6 +25,50 @@ export default class HomeScreen extends Component {
     this.state = {
       cityListArr: PLACES,
     };
+  }
+
+  componentDidMount() {
+    this.getMyLocationList();
+  }
+
+  getMyLocationList() {
+    console.log('getMyLocationList');
+    const cityListArr = [...PLACES];
+    if (cityListArr) {
+      async.eachSeries(
+        cityListArr,
+        (city, callback) => {
+          getPhotoByCityName(city.description, 'portrait')
+            .then((response) => {
+              if (response) {
+                const images = response.results;
+                if (images) {
+                  if (images[0]) {
+                    city.image = images[0].urls;
+                  }
+                  return callback();
+                }
+              }
+            })
+            .catch((error) => {
+              console.log('getPhotoByCityName error: ', error);
+              return callback();
+            });
+        },
+        () => {
+          // this.setState({
+          //   cityListArr: cityListArr,
+          // });
+          console.log('this.cityListArr: ', cityListArr);
+          // console.log('this.cityListArr: ', this.state.cityListArr);
+        },
+      );
+    }
+  }
+
+  navigateDetails() {
+    console.log('navigateDetails: ');
+    this.props.navigation.navigate('Details');
   }
 
   render() {
@@ -46,15 +93,26 @@ export default class HomeScreen extends Component {
             </Button>
           </Right>
         </Header>
-        <Content>
+        <View style={styles.customContent}>
           <List
             nestedScrollEnabled
             dataArray={this.state.cityListArr}
-            renderItem={({item}) => <WeatherCardItem item={item} />}
+            renderItem={({item}) => (
+              <WeatherCardItem
+                item={item}
+                onPress={() => this.navigateDetails()}
+              />
+            )}
             keyExtractor={(item) => item.id}
           />
-        </Content>
+        </View>
       </Container>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  customContent: {
+    flex: 1,
+  },
+});
