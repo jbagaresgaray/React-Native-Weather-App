@@ -53,10 +53,10 @@ export default StyleSheet.create({
     paddingLeft: 25,
   },
   appTitle: {
-    fontSize: 18,
-    lineHeight: 21,
+    fontSize: 40,
+    lineHeight: 40,
     letterSpacing: 0,
-    textAlign: 'center',
+    textAlign: 'left',
     color: Colors.colorTitle,
     ...FONT_REGULAR,
   },

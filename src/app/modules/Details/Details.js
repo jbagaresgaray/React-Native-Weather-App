@@ -9,11 +9,12 @@ import {
   Text,
   List,
   ListItem,
-  Footer,
-  FooterTab,
+  Body,
+  Right,
 } from 'native-base';
 import {StyleSheet, View, ImageBackground} from 'react-native';
 import toLower from 'lodash-es/toLower';
+import * as Animatable from 'react-native-animatable';
 
 import IconSun from '../../../assets/Icon-Sun.svg';
 import IconRain from '../../../assets/Icon-Rain.svg';
@@ -90,31 +91,75 @@ export default class DetailsScreen extends Component {
                 <Text style={styles.weatherCardTemperature}>37&deg;</Text>
               </View>
             </View>
-            {/* <View style={styles.weatherListView}>
-             
-            </View> */}
           </Content>
-          <Footer style={styles.appFooter}>
-            <FooterTab style={styles.weatherListView}>
-              <List>
-                <ListItem>
-                  <Text>Tomorrow</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Tuesday</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Wednesday</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Thursday</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Friday</Text>
-                </ListItem>
-              </List>
-            </FooterTab>
-          </Footer>
+          <Animatable.View animation={'slideInUp'} duration={500}>
+            <View style={styles.appFooter}>
+              <View style={styles.weatherListView}>
+                <List>
+                  <ListItem style={styles.weatherListItemCol}>
+                    <Left style={globals.viewFlex5}>
+                      <Text style={styles.weatherListItemLabel}>Tomorrow</Text>
+                    </Left>
+                    <Body style={styles.weatherListItemIconView}>
+                      {this.generateWeatherIcon('sunny')}
+                    </Body>
+                    <Right style={styles.weatherListItemTempView}>
+                      <Text style={styles.weatherListItemLabel}>17</Text>
+                      <Text style={styles.weatherListItemNote}>12</Text>
+                    </Right>
+                  </ListItem>
+                  <ListItem style={styles.weatherListItemCol}>
+                    <Left style={globals.viewFlex5}>
+                      <Text style={styles.weatherListItemLabel}>Tuesday</Text>
+                    </Left>
+                    <Body style={styles.weatherListItemIconView}>
+                      {this.generateWeatherIcon('sunny')}
+                    </Body>
+                    <Right style={styles.weatherListItemTempView}>
+                      <Text style={styles.weatherListItemLabel}>17</Text>
+                      <Text style={styles.weatherListItemNote}>12</Text>
+                    </Right>
+                  </ListItem>
+                  <ListItem style={styles.weatherListItemCol}>
+                    <Left style={globals.viewFlex5}>
+                      <Text style={styles.weatherListItemLabel}>Wednesday</Text>
+                    </Left>
+                    <Body style={styles.weatherListItemIconView}>
+                      {this.generateWeatherIcon('sunny')}
+                    </Body>
+                    <Right style={styles.weatherListItemTempView}>
+                      <Text style={styles.weatherListItemLabel}>17</Text>
+                      <Text style={styles.weatherListItemNote}>12</Text>
+                    </Right>
+                  </ListItem>
+                  <ListItem style={styles.weatherListItemCol}>
+                    <Left style={globals.viewFlex5}>
+                      <Text style={styles.weatherListItemLabel}>Thursday</Text>
+                    </Left>
+                    <Body style={styles.weatherListItemIconView}>
+                      {this.generateWeatherIcon('sunny')}
+                    </Body>
+                    <Right style={styles.weatherListItemTempView}>
+                      <Text style={styles.weatherListItemLabel}>17</Text>
+                      <Text style={styles.weatherListItemNote}>12</Text>
+                    </Right>
+                  </ListItem>
+                  <ListItem style={styles.weatherListItemCol}>
+                    <Left style={globals.viewFlex5}>
+                      <Text style={styles.weatherListItemLabel}>Friday</Text>
+                    </Left>
+                    <Body style={styles.weatherListItemIconView}>
+                      {this.generateWeatherIcon('sunny')}
+                    </Body>
+                    <Right style={styles.weatherListItemTempView}>
+                      <Text style={styles.weatherListItemLabel}>17</Text>
+                      <Text style={styles.weatherListItemNote}>12</Text>
+                    </Right>
+                  </ListItem>
+                </List>
+              </View>
+            </View>
+          </Animatable.View>
         </ImageBackground>
       </Container>
     );
@@ -126,13 +171,13 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   appFooter: {
-    height: 'auto',
+    height: 300,
     // backgroundColor: 'transparent',
     backgroundColor: '#2A2E43',
     borderTopWidth: 0,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
-    marginTop: 24,
+    // marginTop: 24,
   },
   bgImage: {
     flex: 1,
@@ -185,7 +230,39 @@ const styles = StyleSheet.create({
   },
   weatherListView: {
     backgroundColor: '#2A2E43',
-    borderTopLeftRadius: 24,
-    borderTopRightRadius: 24,
+    marginTop: 24,
+    flex: 1,
+    paddingLeft: 8,
+    paddingRight: 24,
+    // borderTopLeftRadius: 24,
+    // borderTopRightRadius: 24,
+  },
+  weatherListItemCol: {
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+  },
+  weatherListItemLabel: {
+    ...FONT_REGULAR,
+    fontSize: 18,
+    lineHeight: 22,
+    letterSpacing: 0.26,
+    color: Colors.colorWhite,
+  },
+  weatherListItemNote: {
+    ...FONT_REGULAR,
+    fontSize: 18,
+    lineHeight: 22,
+    letterSpacing: 0.26,
+    color: Colors.colorWhite,
+    opacity: 0.5,
+    marginLeft: 15,
+  },
+  weatherListItemIconView: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+  weatherListItemTempView: {
+    flexDirection: 'row',
   },
 });

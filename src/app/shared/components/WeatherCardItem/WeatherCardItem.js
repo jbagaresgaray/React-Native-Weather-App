@@ -48,16 +48,20 @@ export default class WeatherCardItem extends Component {
   }
 
   render() {
+    const image = require('../../../../assets/demo.jpg');
     return (
       <TouchableWithoutFeedback onPress={this.props.onPress}>
         <View style={styles.cardViewContainer}>
-          <LinearGradient
-            colors={['#00000000', '#00000080']}
-            start={{x: 0, y: 0}}
-            end={{x: 0, y: 1}}
-            style={styles.linearGradient}
-          />
-          <ImageBackground source={this.props.image} style={styles.image}>
+          <ImageBackground
+            source={image}
+            style={styles.bgImage}
+            imageStyle={styles.bgImageStyle}>
+            <LinearGradient
+              colors={['#00000000', '#00000080']}
+              start={{x: 0, y: 0}}
+              end={{x: 0, y: 1}}
+              style={styles.linearGradient}
+            />
             <View style={styles.weatherCardContent}>
               <View style={styles.weatherCardStatusView}>
                 {this.generateWeatherIcon('sunny')}
@@ -80,8 +84,16 @@ export default class WeatherCardItem extends Component {
 }
 
 const styles = StyleSheet.create({
-  cardViewContainer: {
+  bgImage: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
     borderRadius: 12,
+  },
+  bgImageStyle: {
+    borderRadius: 12,
+  },
+  cardViewContainer: {
     maxHeight: 140,
     height: 140,
     position: 'relative',
@@ -90,12 +102,12 @@ const styles = StyleSheet.create({
   },
   linearGradient: {
     flex: 1,
-    borderRadius: 12,
     position: 'absolute',
     left: 0,
     right: 0,
     top: 0,
     bottom: 0,
+    borderRadius: 12,
   },
   image: {
     flex: 1,

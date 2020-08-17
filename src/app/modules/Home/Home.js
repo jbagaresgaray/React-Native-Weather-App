@@ -12,12 +12,19 @@ import {
   Text,
   List,
   View,
+  Tabs,
+  Tab,
+  TabHeading,
 } from 'native-base';
 import async from 'async';
+import {StyleSheet} from 'react-native';
+import * as Animatable from 'react-native-animatable';
+
 import WeatherCardItem from '../../shared/components/WeatherCardItem/WeatherCardItem';
 import {PLACES} from '../../shared/constants/data';
 import {getPhotoByCityName} from '../../shared/services/Unsplash';
-import {StyleSheet} from 'react-native';
+
+import globals from '../../../styles/Global';
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -74,7 +81,7 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <Container>
-        <Header>
+        <Header hasTabs>
           <Left>
             <Button
               transparent
@@ -82,9 +89,7 @@ export default class HomeScreen extends Component {
               <Icon name="menu" />
             </Button>
           </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
+          <Body />
           <Right>
             <Button
               transparent
@@ -93,19 +98,51 @@ export default class HomeScreen extends Component {
             </Button>
           </Right>
         </Header>
-        <View style={styles.customContent}>
-          <List
-            nestedScrollEnabled
-            dataArray={this.state.cityListArr}
-            renderItem={({item}) => (
-              <WeatherCardItem
-                item={item}
-                onPress={() => this.navigateDetails()}
-              />
-            )}
-            keyExtractor={(item) => item.id}
-          />
+        <View style={styles.headingView}>
+          <Text style={globals.appTitle}>Weather</Text>
         </View>
+        <Tabs>
+          <Tab
+            heading={
+              <TabHeading>
+                <Text>TODAY</Text>
+              </TabHeading>
+            }>
+            <View style={styles.customContent}>
+              <List
+                nestedScrollEnabled
+                dataArray={this.state.cityListArr}
+                renderItem={({item, index}) =>
+                  index % 2 ? (
+                    <Animatable.View animation={'bounceInRight'}>
+                      <WeatherCardItem
+                        item={item}
+                        key={index}
+                        onPress={() => this.navigateDetails()}
+                      />
+                    </Animatable.View>
+                  ) : (
+                    <Animatable.View animation={'bounceInLeft'}>
+                      <WeatherCardItem
+                        item={item}
+                        key={index}
+                        onPress={() => this.navigateDetails()}
+                      />
+                    </Animatable.View>
+                  )
+                }
+                keyExtractor={(item) => item.id}
+              />
+            </View>
+          </Tab>
+          <Tab
+            heading={
+              <TabHeading>
+                <Text>Tomorrow</Text>
+              </TabHeading>
+            }
+          />
+        </Tabs>
       </Container>
     );
   }
@@ -114,5 +151,11 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   customContent: {
     flex: 1,
+    paddingLeft: 16,
+    paddingRight: 16,
+  },
+  headingView: {
+    // paddingTop: 21,
+    paddingLeft: 16,
   },
 });
