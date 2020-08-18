@@ -8,37 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* ReactNativeWeatherUplabsSketchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ReactNativeWeatherUplabsSketchTests.m */; };
-		0C7D4408FEDF4F598941CDB1 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D496D2FA32A14FF49516E15B /* FontAwesome5_Solid.ttf */; };
 		13880EC0B616CFF84C569CD6 /* libPods-ReactNativeWeatherUplabsSketch-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AACBFE0574DFB9A46F896FC /* libPods-ReactNativeWeatherUplabsSketch-tvOS.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		1B7F2AAC2E894F138602D415 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65552DD996CB465CBC184A82 /* Ionicons.ttf */; };
 		1FC6131891002C460D603022 /* libPods-ReactNativeWeatherUplabsSketch-ReactNativeWeatherUplabsSketchTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A72BD09C3F07E67FB84E0BA0 /* libPods-ReactNativeWeatherUplabsSketch-ReactNativeWeatherUplabsSketchTests.a */; };
-		2B601CB0432A48C5BE78E1AD /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B4B7B3C6C3948D694222BCC /* FontAwesome5_Regular.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* ReactNativeWeatherUplabsSketchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ReactNativeWeatherUplabsSketchTests.m */; };
-		3261C2F26B964B909729C95F /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB032201E7DC4E53898A2FB6 /* Roboto.ttf */; };
 		39EE650C80583247184DE646 /* libPods-ReactNativeWeatherUplabsSketch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8DA469B0FA2899D4F84E22 /* libPods-ReactNativeWeatherUplabsSketch.a */; };
-		4B3F294DF2C04D31B224BBF5 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE46CB3545E149C087C5B81B /* Fontisto.ttf */; };
-		655932A98D0247469605A84E /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6000D354537F4ACEBD2742A2 /* Foundation.ttf */; };
-		792CDE82F0DE4D3ABE149929 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F850C94A130A4167938657BC /* Entypo.ttf */; };
+		5AF9EB1624EB95CD0024FE34 /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5226006F02FC4F9D9E288D66 /* Roboto_medium.ttf */; };
+		5AF9EB1724EB95D10024FE34 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB032201E7DC4E53898A2FB6 /* Roboto.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		84EE4CAF253544CAB1AF897F /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 177A6BBC105743FABE3E0382 /* FontAwesome5_Brands.ttf */; };
-		ABA89244F6504FE290B7CFAD /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B5442E414BA6AEFE8CD2 /* MaterialIcons.ttf */; };
-		B88BA4A19E874147B3D70070 /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5226006F02FC4F9D9E288D66 /* Roboto_medium.ttf */; };
-		BE15C4D2A0B3407F9456D39E /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E68B9E8D9504B448447BD68 /* MaterialCommunityIcons.ttf */; };
 		CB0516CE1AC01FBF7E5F6EFE /* libPods-ReactNativeWeatherUplabsSketch-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FA95FBF48880591EB01D5A /* libPods-ReactNativeWeatherUplabsSketch-tvOSTests.a */; };
-		CBF92002A9E344E88013D5CA /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BDC7868E3C674A4D909D6383 /* Octicons.ttf */; };
-		CD03DFE2AEA244E0BB401516 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB658714726048809CB0FD97 /* AntDesign.ttf */; };
-		D6D11C63BF4D436F99853FCE /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2D7AC4CE72546299CD9E2D5 /* rubicon-icon-font.ttf */; };
-		DF6087C4FCDD4D9587762699 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76BF37EB2AD04BB99A07AAA6 /* Feather.ttf */; };
-		E02799DF1EC84ED7B4F948A4 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C995C4966EB847E1A54957ED /* EvilIcons.ttf */; };
-		E6F4093AFD1E4756AD462E56 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 946690AFD3C242479C7D7EE3 /* FontAwesome.ttf */; };
-		EEBDFE3FC7774DE0872C4A3B /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 606DBFCA274345C49C19D023 /* SimpleLineIcons.ttf */; };
-		FA1233D2B2B24D2CA8FD4A74 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDFA0F8D1964B0A8DA96FDB /* Zocial.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -404,27 +387,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AF9EB1724EB95D10024FE34 /* Roboto.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				CD03DFE2AEA244E0BB401516 /* AntDesign.ttf in Resources */,
-				792CDE82F0DE4D3ABE149929 /* Entypo.ttf in Resources */,
-				E02799DF1EC84ED7B4F948A4 /* EvilIcons.ttf in Resources */,
-				DF6087C4FCDD4D9587762699 /* Feather.ttf in Resources */,
-				E6F4093AFD1E4756AD462E56 /* FontAwesome.ttf in Resources */,
-				84EE4CAF253544CAB1AF897F /* FontAwesome5_Brands.ttf in Resources */,
-				2B601CB0432A48C5BE78E1AD /* FontAwesome5_Regular.ttf in Resources */,
-				0C7D4408FEDF4F598941CDB1 /* FontAwesome5_Solid.ttf in Resources */,
-				4B3F294DF2C04D31B224BBF5 /* Fontisto.ttf in Resources */,
-				655932A98D0247469605A84E /* Foundation.ttf in Resources */,
-				1B7F2AAC2E894F138602D415 /* Ionicons.ttf in Resources */,
-				BE15C4D2A0B3407F9456D39E /* MaterialCommunityIcons.ttf in Resources */,
-				ABA89244F6504FE290B7CFAD /* MaterialIcons.ttf in Resources */,
-				CBF92002A9E344E88013D5CA /* Octicons.ttf in Resources */,
-				B88BA4A19E874147B3D70070 /* Roboto_medium.ttf in Resources */,
-				3261C2F26B964B909729C95F /* Roboto.ttf in Resources */,
-				D6D11C63BF4D436F99853FCE /* rubicon-icon-font.ttf in Resources */,
-				EEBDFE3FC7774DE0872C4A3B /* SimpleLineIcons.ttf in Resources */,
-				FA1233D2B2B24D2CA8FD4A74 /* Zocial.ttf in Resources */,
+				5AF9EB1624EB95CD0024FE34 /* Roboto_medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,10 +519,42 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeWeatherUplabsSketch/Pods-ReactNativeWeatherUplabsSketch-resources.sh",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

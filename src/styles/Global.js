@@ -46,8 +46,16 @@ export default StyleSheet.create({
   appBackButton: {
     color: Colors.colorWhite,
   },
+  appHomeButtom: {
+    color: Colors.colorTitle,
+  },
   appHeader: {
-    marginLeft: 15,
+    backgroundColor: Colors.colorWhite,
+    borderBottomWidth: 0,
+  },
+  appTabsHeader: {
+    backgroundColor: Colors.colorWhite,
+    borderBottomWidth: 0,
   },
   appContentHeader: {
     paddingLeft: 25,
@@ -61,8 +69,7 @@ export default StyleSheet.create({
     ...FONT_REGULAR,
   },
   appModalTitle: {
-    fontSize: 14,
-    lineHeight: 16,
+    fontSize: 22,
     letterSpacing: 0,
     textAlign: 'left',
     color: Colors.colorTitle,

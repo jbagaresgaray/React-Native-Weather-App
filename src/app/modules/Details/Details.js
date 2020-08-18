@@ -61,10 +61,14 @@ export default class DetailsScreen extends Component {
 
   render() {
     const image = require('../../../assets/demo.jpg');
+    const params = this.props.route.params;
+    const details = params.location;
 
     return (
       <Container>
-        <ImageBackground source={image} style={styles.bgImage}>
+        <ImageBackground
+          source={details !== undefined ? {uri: details.image.regular} : image}
+          style={styles.bgImage}>
           <Header style={globals.noHeaderBorder}>
             <Left>
               <Button
@@ -80,19 +84,37 @@ export default class DetailsScreen extends Component {
           </Header>
           <Content style={styles.appContent}>
             <View style={styles.weatherInfoView}>
-              <View style={styles.weatherCardStatusView}>
-                {this.generateWeatherIcon('sunny')}
-                <Text style={styles.weatherCardStatus}> Sunny</Text>
-              </View>
-              <View style={styles.weatherCardLocationView}>
-                <Text style={styles.weatherCardLocation}>Tokyo, Japan</Text>
-              </View>
-              <View style={styles.weatherCardTemperatureView}>
-                <Text style={styles.weatherCardTemperature}>37&deg;</Text>
-              </View>
+              <Animatable.View
+                animation={'slideInLeft'}
+                duration={500}
+                delay={100}
+                useNativeDriver={true}>
+                <View style={styles.weatherCardStatusView}>
+                  {this.generateWeatherIcon('sunny')}
+                  <Text style={styles.weatherCardStatus}> Sunny</Text>
+                </View>
+                <View style={styles.weatherCardLocationView}>
+                  <Text style={styles.weatherCardLocation}>
+                    {details.title}
+                  </Text>
+                </View>
+              </Animatable.View>
+              <Animatable.View
+                animation={'slideInRight'}
+                duration={500}
+                delay={100}
+                useNativeDriver={true}>
+                <View style={styles.weatherCardTemperatureView}>
+                  <Text style={styles.weatherCardTemperature}>37&deg;</Text>
+                </View>
+              </Animatable.View>
             </View>
           </Content>
-          <Animatable.View animation={'slideInUp'} duration={500}>
+          <Animatable.View
+            animation={'slideInUp'}
+            duration={500}
+            delay={100}
+            useNativeDriver={true}>
             <View style={styles.appFooter}>
               <View style={styles.weatherListView}>
                 <List>

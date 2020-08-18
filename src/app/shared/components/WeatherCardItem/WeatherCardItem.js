@@ -49,11 +49,12 @@ export default class WeatherCardItem extends Component {
 
   render() {
     const image = require('../../../../assets/demo.jpg');
+    const item = this.props.item;
     return (
       <TouchableWithoutFeedback onPress={this.props.onPress}>
         <View style={styles.cardViewContainer}>
           <ImageBackground
-            source={image}
+            source={item !== undefined ? {uri: item?.image?.small} : image}
             style={styles.bgImage}
             imageStyle={styles.bgImageStyle}>
             <LinearGradient

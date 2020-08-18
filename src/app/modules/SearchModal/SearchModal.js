@@ -9,11 +9,22 @@ import {
   Text,
   Item,
   Input,
+  List,
 } from 'native-base';
+import {View} from 'react-native';
+import {StyleSheet} from 'react-native';
+import * as Animatable from 'react-native-animatable';
+
+import {PLACES} from '../../shared/constants/data';
+import PlaceCardItem from '../../shared/components/PlaceCardItem/PlaceCardItem';
+import globals from '../../../styles/Global';
 
 export default class SearchModalScreen extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      cityListArr: PLACES,
+    };
   }
 
   render() {
@@ -30,10 +41,51 @@ export default class SearchModalScreen extends Component {
             <Input placeholder="Search" />
           </Item>
         </Header>
-        <Content>
-          <Text>This is Content Section</Text>
-        </Content>
+        <View style={styles.customContent}>
+          <View style={styles.headingView}>
+            <Text style={globals.appModalTitle}>
+              {this.state.cityListArr.length} Results found
+            </Text>
+          </View>
+          <List
+            nestedScrollEnabled
+            dataArray={this.state.cityListArr}
+            renderItem={({item, index}) =>
+              index % 2 ? (
+                <Animatable.View animation={'bounceInRight'}>
+                  <PlaceCardItem
+                    item={item}
+                    key={index}
+                    onPress={() => this.navigateDetails()}
+                  />
+                </Animatable.View>
+              ) : (
+                <Animatable.View animation={'bounceInLeft'}>
+                  <PlaceCardItem
+                    item={item}
+                    key={index}
+                    onPress={() => this.navigateDetails()}
+                  />
+                </Animatable.View>
+              )
+            }
+            keyExtractor={(item) => item.id}
+          />
+        </View>
       </Container>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  customContent: {
+    flex: 1,
+    paddingLeft: 16,
+    paddingRight: 16,
+  },
+  headingView: {
+    paddingTop: 21,
+    paddingBottom: 21,
+    // paddingLeft: 16,
+  },
+});
