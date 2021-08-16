@@ -1,29 +1,27 @@
 import React, {Component} from 'react';
-import {
-  StyleSheet,
-  View,
-  ImageBackground,
-  Text,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import {StyleSheet, View, Text, TouchableWithoutFeedback} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import toLower from 'lodash-es/toLower';
 
-import {FONT_REGULAR, FONT_SEMI_BOLD} from '../../../../styles/Typography';
-import Colors from '../../../../styles/Colors';
+import ImageBackground from '../ImageBackground';
 
-import IconSun from '../../../../assets/Icon-Sun.svg';
-import IconRain from '../../../../assets/Icon-Rain.svg';
-import IconCloud from '../../../../assets/Icon-Cloud.svg';
-import IconFog from '../../../../assets/Icon-Fog.svg';
-import IconNight from '../../../../assets/Icon-Night.svg';
-import IconSunrise from '../../../../assets/Icon-Sunrise.svg';
-import IconSunset from '../../../../assets/Icon-Sunset.svg';
-import IconOvercast from '../../../../assets/Icon-Overcast2.svg';
-import IconClear from '../../../../assets/Icon-Sun.svg';
+import {FONT_REGULAR, FONT_SEMI_BOLD} from '../../../styles/Typography';
+import Colors from '../../../styles/Colors';
 
-export default class WeatherCardItem extends Component {
-  generateWeatherIcon(weatherDescription) {
+import IconSun from '../../../assets/Icon-Sun.svg';
+import IconRain from '../../../assets/Icon-Rain.svg';
+import IconCloud from '../../../assets/Icon-Cloud.svg';
+import IconFog from '../../../assets/Icon-Fog.svg';
+import IconNight from '../../../assets/Icon-Night.svg';
+import IconSunrise from '../../../assets/Icon-Sunrise.svg';
+import IconSunset from '../../../assets/Icon-Sunset.svg';
+import IconOvercast from '../../../assets/Icon-Overcast2.svg';
+import IconClear from '../../../assets/Icon-Sun.svg';
+
+import defaultImg from '../../../assets/landscape.jpg';
+
+const WeatherCardItem = ({title, image, onPress}) => {
+  const generateWeatherIcon = (weatherDescription) => {
     if (weatherDescription) {
       if (toLower(weatherDescription).indexOf('sunny') !== -1) {
         return <IconSun />;
@@ -45,44 +43,37 @@ export default class WeatherCardItem extends Component {
         return <IconClear />;
       }
     }
-  }
-
-  render() {
-    const image = require('../../../../assets/demo.jpg');
-    const item = this.props.item;
-    return (
-      <TouchableWithoutFeedback onPress={this.props.onPress}>
-        <View style={styles.cardViewContainer}>
-          <ImageBackground
-            source={item !== undefined ? {uri: item?.image?.small} : image}
-            style={styles.bgImage}
-            imageStyle={styles.bgImageStyle}>
-            <LinearGradient
-              colors={['#00000000', '#00000080']}
-              start={{x: 0, y: 0}}
-              end={{x: 0, y: 1}}
-              style={styles.linearGradient}
-            />
-            <View style={styles.weatherCardContent}>
-              <View style={styles.weatherCardStatusView}>
-                {this.generateWeatherIcon('sunny')}
-                <Text style={styles.weatherCardStatus}> Sunny</Text>
-              </View>
-              <View style={styles.weatherCardTemperatureView}>
-                <Text style={styles.weatherCardTemperature}>37 &deg;</Text>
-              </View>
-              <View style={styles.weatherCardLocationView}>
-                <Text style={styles.weatherCardStatus}>
-                  {this.props.item.title}
-                </Text>
-              </View>
+  };
+  return (
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={styles.cardViewContainer}>
+        <ImageBackground
+          source={image !== undefined ? {uri: image} : defaultImg}
+          style={styles.bgImage}
+          imageStyle={styles.bgImageStyle}>
+          <LinearGradient
+            colors={['#00000000', '#00000080']}
+            start={{x: 0, y: 0}}
+            end={{x: 0, y: 1}}
+            style={styles.linearGradient}
+          />
+          <View style={styles.weatherCardContent}>
+            <View style={styles.weatherCardStatusView}>
+              {generateWeatherIcon('sunny')}
+              <Text style={styles.weatherCardStatus}> Sunny</Text>
             </View>
-          </ImageBackground>
-        </View>
-      </TouchableWithoutFeedback>
-    );
-  }
-}
+            <View style={styles.weatherCardTemperatureView}>
+              <Text style={styles.weatherCardTemperature}>37 &deg;</Text>
+            </View>
+            <View style={styles.weatherCardLocationView}>
+              <Text style={styles.weatherCardStatus}>{title}</Text>
+            </View>
+          </View>
+        </ImageBackground>
+      </View>
+    </TouchableWithoutFeedback>
+  );
+};
 
 const styles = StyleSheet.create({
   bgImage: {
@@ -155,3 +146,5 @@ const styles = StyleSheet.create({
     paddingRight: 16,
   },
 });
+
+export default WeatherCardItem;

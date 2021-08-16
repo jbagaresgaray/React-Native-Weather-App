@@ -8,17 +8,18 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import {FONT_REGULAR, FONT_SEMI_BOLD} from '../../../../styles/Typography';
-import Colors from '../../../../styles/Colors';
+import {FONT_REGULAR, FONT_SEMI_BOLD} from '../../../styles/Typography';
+import Colors from '../../../styles/Colors';
+
+import defaultImg from '../../../assets/demo.jpg';
 
 export default class PlaceCardItem extends Component {
   render() {
-    const image = require('../../../../assets/demo.jpg');
     return (
       <TouchableWithoutFeedback onPress={this.props.onPress}>
         <View style={styles.cardViewContainer}>
           <ImageBackground
-            source={image}
+            source={defaultImg}
             style={styles.bgImage}
             imageStyle={styles.bgImageStyle}>
             <LinearGradient

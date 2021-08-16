@@ -16,7 +16,7 @@ import {StyleSheet} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 
 import {PLACES} from '../../shared/constants/data';
-import PlaceCardItem from '../../shared/components/PlaceCardItem/PlaceCardItem';
+import PlaceCardItem from '../../components/PlaceCardItem/PlaceCardItem';
 import globals from '../../../styles/Global';
 
 export default class SearchModalScreen extends Component {

@@ -1,6 +1,6 @@
 export const PLACES = [
   {
-    id: '1b9ea3c094d3ac23c9a3afa8cd4d8a41f05de50a',
+    id: '1',
     place_id: 'ChIJIQBpAG2ahYAR_6128GcTUEo',
     title: 'San Francisco',
     subtitle: 'CA, USA',
@@ -18,7 +18,7 @@ export const PLACES = [
     types: ['locality', 'political', 'geocode'],
   },
   {
-    id: '45c0b5209973fcec652817e16e20f1d0b4ecb602',
+    id: '2',
     place_id: 'ChIJXSModoWLGGARILWiCfeu2M0',
     title: 'Tokyo',
     subtitle: 'Japan',
@@ -35,9 +35,45 @@ export const PLACES = [
     types: ['colloquial_area', 'locality', 'political', 'geocode'],
   },
   {
-    id: 'f42bd02b6ca5703841eeb294f4f241d2087284d2',
+    id: '3',
     place_id: 'ChIJW6AIkVXemwARTtIvZ2xC3FA',
     title: 'Rio de Janeiro',
+    subtitle: 'State of Rio de Janeiro, Brazil',
+    description: 'Rio de Janeiro, State of Rio de Janeiro, Brazil',
+    structured_formatting: {
+      main_text: 'Rio de Janeiro',
+      main_text_matched_substrings: [{length: 3, offset: 0}],
+      secondary_text: 'State of Rio de Janeiro, Brazil',
+    },
+    terms: [
+      {offset: 0, value: 'Rio de Janeiro'},
+      {offset: 16, value: 'State of Rio de Janeiro'},
+      {offset: 41, value: 'Brazil'},
+    ],
+    types: ['locality', 'political', 'geocode'],
+  },
+  {
+    id: '4',
+    place_id: 'ChIJW6AIkVXemwARTtIvZ2xC3FA',
+    title: 'Manila',
+    subtitle: 'State of Rio de Janeiro, Brazil',
+    description: 'Rio de Janeiro, State of Rio de Janeiro, Brazil',
+    structured_formatting: {
+      main_text: 'Rio de Janeiro',
+      main_text_matched_substrings: [{length: 3, offset: 0}],
+      secondary_text: 'State of Rio de Janeiro, Brazil',
+    },
+    terms: [
+      {offset: 0, value: 'Rio de Janeiro'},
+      {offset: 16, value: 'State of Rio de Janeiro'},
+      {offset: 41, value: 'Brazil'},
+    ],
+    types: ['locality', 'political', 'geocode'],
+  },
+  {
+    id: '5',
+    place_id: 'ChIJW6AIkVXemwARTtIvZ2xC3FA',
+    title: 'Lisbon',
     subtitle: 'State of Rio de Janeiro, Brazil',
     description: 'Rio de Janeiro, State of Rio de Janeiro, Brazil',
     structured_formatting: {
